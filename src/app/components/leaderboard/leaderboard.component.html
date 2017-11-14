@@ -1,0 +1,16 @@
+<div class="leaderboard">
+  <div class="heading text-center">
+    <h3>Leaderboard</h3>
+  </div>
+  <br>
+  <div class="card w-90" *ngFor="let leader of leaders | orderBy : 'balance': true; let i = index">
+    <div class="card-body">
+      <h4 class="card-title">{{i+1}}. {{leader.username}}
+        <i *ngIf="i==0 && leader.balance > 0" class="first pull-right fa fa-trophy" aria-hidden="true"></i>
+        <i *ngIf="i==1 && leader.balance > 0" class="second pull-right fa fa-trophy" aria-hidden="true"></i>
+        <i *ngIf="i==2 && leader.balance > 0" class="third pull-right fa fa-trophy" aria-hidden="true"></i>
+      </h4>
+      <p class="card-text text-muted">Coins: {{leader.balance}}</p>
+    </div>
+  </div>
+</div>

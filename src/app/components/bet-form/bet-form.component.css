@@ -1,0 +1,18 @@
+.currencies .container i {
+  margin: 1em;
+}
+
+.heading {
+  margin: 1em;
+}
+
+.card {
+  width: 80%;
+  margin-bottom: 2em;
+}
+
+
+.card .time {
+  position: relative;
+  margin-top: -2.4em;
+}

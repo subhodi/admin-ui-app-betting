@@ -1,0 +1,44 @@
+<div *ngIf='incorrectCredentials && !newUser' class="card text-white bg-danger mb-2">
+  <div class="card-body">
+    <h4 class="card-title">Incorrect Credentials</h4>
+    <p class="card-text">Incorrect username or password</p>
+  </div>
+</div>
+
+<div *ngIf='incorrectCredentials && newUser' class="card text-white bg-danger mb-2">
+  <div class="card-body">
+    <h4 class="card-title">Username Taken</h4>
+    <p class="card-text">Username must be unique</p>
+  </div>
+</div>
+
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs justify-content-center card-header-tabs">
+      <li class="nav-item">
+        <button class="btn btn-link nav-link active" (click)="newUser = false" role="tab" data-toggle="tab">Sign In</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-link nav-link" (click)="newUser = true" role="tab" data-toggle="tab">Sign Up</button>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <form (submit)="authenticateUser()" ngNativeValidate>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-user-o" aria-hidden="true"></i></span>
+          <input type="text" class="form-control" required placeholder="Username" [(ngModel)]="username" name="username">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon"><i class="fa fa-lock" aria-hidden="true"></i></span>
+          <input type="password" class="form-control" required placeholder="Password" [(ngModel)]="password" name="password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">{{ newUser ? 'Sign Up' : 'Sign In' }}</button>
+    </form>
+  </div>
+</div>
