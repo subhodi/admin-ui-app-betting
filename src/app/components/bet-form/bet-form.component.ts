@@ -46,6 +46,9 @@ export class BetFormComponent implements OnInit {
 
   declare() {
     this.dataService.declare().subscribe(data => this.response = data['txHash'], err => this.response = err['error']);
+    setTimeout(() => {
+      this.dataService.resolve().subscribe(data => this.response = data['txHash'], err => this.response = err['error']);
+    }, 30 * 1000);
   }
 
   resolve() {

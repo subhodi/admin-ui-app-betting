@@ -31,17 +31,17 @@ export class DataService {
 
   newRound() {
     return this.http
-      .post(environment.apiUrl + '/admin/new-round', { });
+      .post(environment.apiUrl + '/admin/new-round', {});
   }
 
   declare() {
     return this.http
-      .post(environment.apiUrl + '/admin/declare', { });
+      .post(environment.apiUrl + '/admin/declare', {});
   }
 
   resolve() {
     return this.http
-      .post(environment.apiUrl + '/admin/resolve', { });
+      .post(environment.apiUrl + '/admin/resolve', {});
   }
 
 
